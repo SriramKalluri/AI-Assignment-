@@ -1,0 +1,80 @@
+Simple Reflex Agent for AQI Detection : 
+Objective
+
+To design and implement a Simple Reflex Agent that reads environmental sensor data from a file and determines the Air Quality Index (AQI) category of a region.
+
+Introduction  : 
+In Artificial Intelligence, an agent is an entity that perceives its environment through sensors and acts upon that environment using actuators.
+A Simple Reflex Agent selects actions based only on the current percept using predefined condition–action rules.
+It does not store past information or maintain any internal state.
+The general rule used by a simple reflex agent is:
+IF condition THEN action
+Here, the agent reads pollution data from a file and determines the AQI category using predefined AQI ranges.
+
+Agent Architecture : 
+The architecture of the AQI reflex agent can be represented as:
+
+Environment Sensors
+        │
+        ▼
+Input Data File (Pollutant Levels)
+        │
+        ▼
+Agent Program
+        │
+        ▼
+Condition–Action Rules
+        │
+        ▼
+AQI Category Output
+
+Components : 
+1. Sensors : The sensor reads environmental data from a file containing pollutant values.
+
+2. Agent Program : Processes the input values and applies AQI rules.
+
+3. Condition–Action Rules : These rules classify the pollution level.
+
+4. Output : Displays the AQI category for the region.
+
+Input Data: 
+The agent reads pollutant values from a file named:
+aqi_data.txt
+
+-> Example input:
+PM2.5 85
+PM10 140
+NO2 50
+SO2 20
+CO 2
+
+Here, the PM2.5 value is used to determine the AQI category.
+
+AQI Classification Rules : 
+PM2.5 Range	AQI Category
+0 – 50	Good
+51 – 100	Moderate
+101 – 150	Unhealthy for Sensitive Groups
+151 – 200	Unhealthy
+200	Hazardous
+
+->These ranges are used by the reflex agent to determine the air quality.
+
+Example : 
+Input
+PM2.5 85
+Agent Rule Applied
+IF PM2.5 ≤ 100 THEN AQI = Moderate
+Output
+PM2.5 Level: 85
+AQI Category: Moderate
+
+Algorithm : 
+1.Open the input file containing pollutant values.
+2.Read pollutant name and value.
+3.Extract the PM2.5 value.
+4.Apply AQI classification rules.
+5.Print the AQI category.
+6.Extract the PM2.5 value.
+7.Apply AQI classification rules.
+8.Print the AQI category.
