@@ -1,0 +1,111 @@
+Turing Test and CAPTCHA — Architecture Design
+
+This part is conceptual. You don’t need heavy coding — they want system architecture.
+
+(A) Turing Test Implementation
+Goal
+
+Determine whether the interacting entity is human or AI.
+
+Architecture
+        +--------------------+
+        |   Human Judge      |
+        +---------+----------+
+                  |
+                  v
+         +------------------+
+         | Conversation     |
+         | Interface (Chat) |
+         +---------+--------+
+                   |
+          +--------+--------+
+          |                 |
+          v                 v
+   +-------------+   +--------------+
+   | Human User  |   | AI Agent     |
+   +-------------+   +--------------+
+
+Judge does not know which is which
+Components
+
+User Interface
+
+Chat interface.
+
+Conversation Manager
+
+Routes messages to participants.
+
+AI Agent
+
+Generates responses.
+
+Human Participant
+
+Judge Module
+
+Evaluates responses and decides.
+
+Working
+
+Judge asks questions.
+
+Both AI and human respond.
+
+Judge evaluates answers.
+
+If judge cannot reliably distinguish, AI passes the Turing Test.
+
+(B) CAPTCHA Implementation
+Goal
+
+Differentiate humans vs bots.
+
+Architecture
+       +-------------------+
+       |   User Request    |
+       +---------+---------+
+                 |
+                 v
+        +------------------+
+        | CAPTCHA Generator|
+        +--------+---------+
+                 |
+          Image / Puzzle
+                 |
+                 v
+          +--------------+
+          |  User Input  |
+          +------+-------+
+                 |
+                 v
+        +-------------------+
+        | Verification Unit |
+        +---------+---------+
+                  |
+        +---------+----------+
+        |                    |
+      Human               Bot Blocked
+Components
+
+CAPTCHA generator
+
+distorted text / image recognition / puzzles.
+
+Challenge delivery module
+
+Response collector
+
+Verification module
+
+Workflow
+
+User accesses website.
+
+CAPTCHA challenge generated.
+
+User solves challenge.
+
+System verifies answer.
+
+If correct → allow access.
