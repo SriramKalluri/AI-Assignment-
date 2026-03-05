@@ -1,0 +1,26 @@
+Uninformed Search Algorithms : 
+Uninformed search algorithms explore a problem's state space without any additional knowledge or heuristics. They only use the information available in the problem definition, such as the initial state, possible actions, and goal state.
+
+Two common uninformed search strategies are:
+1.Breadth First Search (BFS) – explores nodes level by level using a queue.
+2.Depth First Search (DFS) – explores as deep as possible along a branch before backtracking, using a stack.
+
+-> Example problem used : Missionaries and Cannibals Problem
+Three missionaries and three cannibals are on the left side of a river and need to cross to the right side using a boat.
+
+Constraints : The boat can carry at most two people at a time.
+              The boat cannot cross the river alone; at least one person must be on it.
+              If the number of cannibals exceeds the number of missionaries on either side, the missionaries will be eaten.
+              The objective is to safely transport all missionaries and cannibals to the right side of the river.
+
+State Representation : 
+Each state can be represented as:
+(M, C, Boat)
+Where:
+M = number of missionaries on the left side
+C = number of cannibals on the left side
+Boat = position of the boat (L = left side, R = right side)
+
+Initial State : (3, 3, L)
+Goal State : (0, 0, R)
+Objective : Use BFS and DFS search algorithms to explore valid states and find a sequence of moves that safely transports all missionaries and cannibals across the river.
