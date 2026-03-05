@@ -6,7 +6,7 @@ quesitons answered simultaneously by a human and a machine. If the judge cannot 
 
 Goal : Determine whether the interacting entity is human or AI.
 
-Architecture : 
+Architecture :  
         +--------------------+
         |   Human Judge      |
         +---------+----------+
