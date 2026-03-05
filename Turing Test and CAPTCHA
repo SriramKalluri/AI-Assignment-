@@ -1,13 +1,12 @@
-Turing Test and CAPTCHA — Architecture Design
+Turing Test and CAPTCHA — Architecture Design : 
 
-This part is conceptual. You don’t need heavy coding — they want system architecture.
+Turing Test: A test to tell man and machine apart. A human judge tries to differentiate and identify corrrectly which is which through a series of 
+quesitons answered simultaneously by a human and a machine. If the judge cannot reliably distunguish then the AI is sai to pass the Turing Test.
+->Implementation : 
 
-(A) Turing Test Implementation
-Goal
+Goal : Determine whether the interacting entity is human or AI.
 
-Determine whether the interacting entity is human or AI.
-
-Architecture
+Architecture : 
         +--------------------+
         |   Human Judge      |
         +---------+----------+
@@ -26,42 +25,20 @@ Architecture
    +-------------+   +--------------+
 
 Judge does not know which is which
-Components
 
-User Interface
+Components :
+-User Interface
+-Chat interface.
+-Conversation Manager
+-Routes messages to participants.
+-AI Agent and Human participant : Generates responses.
+-Judge Module : Evaluates responses and decides.
 
-Chat interface.
+ CAPTCHA : Completely Automated Public Turing Test to tell Computers and Humans Apart
+-> Implementation : 
+Goal : Differentiate humans vs bots.
 
-Conversation Manager
-
-Routes messages to participants.
-
-AI Agent
-
-Generates responses.
-
-Human Participant
-
-Judge Module
-
-Evaluates responses and decides.
-
-Working
-
-Judge asks questions.
-
-Both AI and human respond.
-
-Judge evaluates answers.
-
-If judge cannot reliably distinguish, AI passes the Turing Test.
-
-(B) CAPTCHA Implementation
-Goal
-
-Differentiate humans vs bots.
-
-Architecture
+Architecture : 
        +-------------------+
        |   User Request    |
        +---------+---------+
@@ -86,26 +63,17 @@ Architecture
         +---------+----------+
         |                    |
       Human               Bot Blocked
-Components
 
-CAPTCHA generator
+Components : 
+->CAPTCHA generator
+->distorted text / image recognition / puzzles.
+->Challenge delivery module
+->Response collector
+->Verification module
 
-distorted text / image recognition / puzzles.
-
-Challenge delivery module
-
-Response collector
-
-Verification module
-
-Workflow
-
-User accesses website.
-
-CAPTCHA challenge generated.
-
-User solves challenge.
-
-System verifies answer.
-
-If correct → allow access.
+Workflow : 
+1.User accesses website.
+2.CAPTCHA challenge generated.
+3.User solves challenge.
+4.System verifies answer.
+5.If correct → allow access.
